@@ -20,9 +20,8 @@ def load_library(file)
   
 end
 
-def emoticon_exist(file, emoticon)
+def emoticon_exist(organized_library, emoticon)
   
- organized_library = load_library(file)
  exist = false
  
  organized_library.each do |key, value|
@@ -44,7 +43,7 @@ def get_japanese_emoticon(file, emoticon)
   
 library = load_library(file)
   
-  if emoticon_exist(file, emoticon) == false
+  if emoticon_exist(library, emoticon) == false
     
     sorry_message = "Sorry, that emoticon was not found"
     return sorry_message
@@ -66,7 +65,7 @@ def get_english_meaning(file, japanese_emoticon)
 
 library = load_library(file)
   
-  if emoticon_exist(file, japanese_emoticon) == false
+  if emoticon_exist(library, japanese_emoticon) == false
     
     sorry_message = "Sorry, that emoticon was not found"
     return sorry_message
